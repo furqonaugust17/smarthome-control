@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_control/models/ruangan_model.dart';
+import 'package:smart_control/pages/detail_ruangan.dart';
 
 class RuanganScreen extends StatelessWidget {
   const RuanganScreen({super.key});
@@ -13,7 +14,16 @@ class RuanganScreen extends StatelessWidget {
         ruangan.length,
         (index) {
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return DetailRuangan(
+                    idRuangan: ruangan[index].id,
+                    namaRuangan: ruangan[index].title,
+                  );
+                },
+              ));
+            },
             child: SizedBox(
               height: 97,
               child: Card(
