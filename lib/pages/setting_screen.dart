@@ -6,26 +6,18 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(
-          height: 97,
-          child: Card(
-            color: const Color(0xFF7AB2D3),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ListTile(
-                  title: Text(
-                    "Setting Device",
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24),
-                  ),
-                ),
-              ],
-            ),
+        const Center(
+          child: Text(
+            "Under Construction",
+            style: TextStyle(
+                color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
           ),
+        ),
+        Image.asset(
+          'assets/image/under_construction.png',
+          width: 200,
         ),
       ],
     );

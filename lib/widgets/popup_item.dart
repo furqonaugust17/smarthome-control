@@ -9,14 +9,22 @@ class PopupItem extends StatefulWidget {
 }
 
 class _PopupItemState extends State<PopupItem> {
-  // bool isActive = false;
+  bool? isActive;
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      isActive = widget.item['status'];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool isActive = widget.item['status'] ?? false;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 37),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 37),
       height: 520,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Color(0xFF7AB2D3),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20), topRight: Radius.circular(20))),
@@ -25,11 +33,21 @@ class _PopupItemState extends State<PopupItem> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Text(widget.item['item'],
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 32)),
-            SizedBox(
+            (widget.item['ruangan'] != null)
+                ? Text(
+                    widget.item['ruangan'],
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30),
+                  )
+                : const SizedBox(),
+            const SizedBox(
               height: 23,
             ),
             SizedBox(
@@ -40,7 +58,7 @@ class _PopupItemState extends State<PopupItem> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Status",
                     style: TextStyle(
                         color: Colors.white,
@@ -51,14 +69,13 @@ class _PopupItemState extends State<PopupItem> {
                     inactiveTrackColor: const Color(0xFFE36565),
                     inactiveThumbColor: Colors.white,
                     trackOutlineColor:
-                        WidgetStatePropertyAll(Colors.transparent),
+                        const WidgetStatePropertyAll(Colors.transparent),
                     activeTrackColor: const Color(0xFF9ED86B),
-                    value: isActive,
+                    value: isActive!,
                     onChanged: (value) {
                       setState(() {
                         isActive = value;
                       });
-                      print(isActive);
                     },
                   )
                 ],
