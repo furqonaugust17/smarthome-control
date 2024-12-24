@@ -16,31 +16,37 @@ class CuacaSuhu extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(
-                MdiIcons.weatherPartlyCloudy,
-                color: Colors.white,
-                size: 60,
-              ),
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
                 children: [
-                  Text(
-                    'Payakumbuh, Sumatra Barat',
-                    style: TextStyle(color: Colors.white),
+                  Icon(
+                    MdiIcons.weatherPartlyCloudy,
+                    color: Colors.white,
+                    size: 60,
                   ),
-                  Text(
-                    'Cerah Berawan',
-                    style: TextStyle(color: Colors.white),
-                  )
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Payakumbuh, Sumatra Barat',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'Cerah Berawan',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
                 ],
               ),
-              const Text(
+              const Expanded(
+                  child: Text(
+                textAlign: TextAlign.center,
                 '25℃',
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 40,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold),
-              )
+              ))
             ],
           ),
           Container(

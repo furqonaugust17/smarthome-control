@@ -17,6 +17,7 @@ class Item extends StatelessWidget {
         );
       },
       child: Container(
+        padding: const EdgeInsets.all(10),
         height: 180,
         width: 180,
         decoration: BoxDecoration(
@@ -48,11 +49,12 @@ class Item extends StatelessWidget {
                     : const SizedBox(),
               ],
             ),
-            SizedBox(
+            Expanded(
+                child: SizedBox(
               height: 116,
               width: 116,
               child: Image.asset('assets/image/${item['image']}'),
-            )
+            ))
           ],
         ),
       ),
