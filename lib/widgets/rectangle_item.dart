@@ -22,26 +22,24 @@ class RectangleItem extends StatelessWidget {
                       items: items,
                     )));
       },
-      child: Expanded(
-          flex: 1,
-          child: Container(
-            padding: const EdgeInsets.all(14),
-            margin: const EdgeInsets.only(left: 5),
-            height: 139,
-            decoration: BoxDecoration(
-                color: const Color(0xFF7AB2D3),
-                borderRadius: BorderRadius.circular(20)),
-            child: Column(
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-                Expanded(child: Image.asset(image))
-              ],
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        margin: const EdgeInsets.only(left: 5),
+        height: 139,
+        decoration: BoxDecoration(
+            color: const Color(0xFF7AB2D3),
+            borderRadius: BorderRadius.circular(20)),
+        child: Column(
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.bold),
             ),
-          )),
+            Expanded(child: Image.asset(image))
+          ],
+        ),
+      ),
     );
   }
 }
